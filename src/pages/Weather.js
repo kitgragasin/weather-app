@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Navigate } from 'react-router-dom';
 
 const Weather = () => {
   
@@ -28,8 +28,8 @@ const Weather = () => {
       setDate(getCurrentDate);
     }
     fetchData();
-  },[state.city,weatherKey])
-  return (
+  },[state,weatherKey])
+  return state!=null? (
     <div>
       {weatherData && (
         <div>
@@ -58,7 +58,7 @@ const Weather = () => {
         </div>
       )}
     </div>
-  );
+  ):(<Navigate to='/home'/>);
 };
 
 export default Weather;

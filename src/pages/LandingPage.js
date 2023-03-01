@@ -1,7 +1,12 @@
 import React from 'react'
+import LoginButton from '../components/LoginButton'
 
 export default function LandingPage() {
   return (
-    <div>LandingPage</div>
+    <div>
+      LandingPage
+      <LoginButton/>
+    </div>
+
   )
 }
