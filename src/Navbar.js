@@ -1,5 +1,6 @@
 import React from "react";
 import {Link } from "react-router-dom";
+import LogoutButton from "./components/LogoutButton";
 
 function Navbar() {
   return (
@@ -13,6 +14,9 @@ function Navbar() {
         </li>
         <li>
           <Link to="/weather">Weather</Link>
+        </li>
+        <li>
+            <LogoutButton/>
         </li>
       </ul>
     </nav>
