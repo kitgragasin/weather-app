@@ -9,7 +9,7 @@ const Weather = () => {
     setCity(event.target.value);
   };
 
-  const weatherKey = '39b76a5fafd8390cbcc38f21b4ee00a5';
+  const weatherKey = process.env.REACT_APP_OPENWEATHERMAP_API_KEY
   const handleSubmit = async (event) => {
     event.preventDefault();
     const response = await axios.get(
