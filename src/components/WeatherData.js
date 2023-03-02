@@ -1,3 +1,4 @@
+import { Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material';
 import React,{useState, useEffect} from 'react'
 import { Navigate } from 'react-router-dom';
 
@@ -20,27 +21,24 @@ export default function WeatherData(props) {
           {weatherData && (
             <div>
               <h2>Current Weather in {weatherData.name}</h2>
-              <table>
-                <tbody>
-                  <tr>
-                    <td>Date:</td>
-                    <td>Temperature:</td>
-                    <td>Description:</td>
-                    <td>Main</td>
-                    <td>Humidity:</td>
-                    
-                  </tr>
-                  <tr>
-                    <td>{date}</td>
-                    <td>
-                      {weatherData.main.temp}°F
-                    </td>
-                    <td>{weatherData.weather[0].description}</td>
-                    <td>{weatherData.weather[0].main}</td>
-                    <td>{weatherData.main.humidity}%</td>
-                  </tr>
-                </tbody>
-              </table>
+              <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                <TableHead>
+                  <TableCell align='center'>Date</TableCell>
+                  <TableCell align='center'>Temperature</TableCell>
+                  <TableCell align='center'>Description</TableCell>
+                  <TableCell align='center'>Main</TableCell>
+                  <TableCell align='center'>Humidity</TableCell>
+                </TableHead>
+                <TableBody>
+                  <TableRow>
+                    <TableCell align='center'>{date}</TableCell>
+                    <TableCell align='center'>{weatherData.main.temp}°F</TableCell>
+                    <TableCell align='center'>{weatherData.weather[0].description}</TableCell>
+                    <TableCell align='center'>{weatherData.weather[0].main}</TableCell>
+                    <TableCell align='center'>{weatherData.main.humidity}%</TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
             </div>
           )}
         </div>
