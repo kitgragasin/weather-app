@@ -23,7 +23,7 @@ export default function Home() {
           
         </label>
         </p>
-        <Button variant="contained" color="inherit" type="submit"><Link to="/weather" state= {{city:city}}>Get Weather</Link></Button>
+        <Button variant="contained" color="inherit" type="submit"><Link to="/weather" state= {{city:city}}>Display Weather</Link></Button>
       </Container>
 
     </div>
